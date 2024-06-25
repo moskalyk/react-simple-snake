@@ -94,7 +94,7 @@ class SnakeGame extends React.Component {
         this.setState({ directionChanged: false })
       }
       
-      if(!this.state.isGameOver && this.state.singleSignedMessage) {
+      if(this.state.isGameOver && this.state.singleSignedMessage) {
         const callbackReturnVal = true
         this.props.callback({ callbackReturnVal })
         this.state.singleSignedMessage = false
