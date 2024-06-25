@@ -95,8 +95,8 @@ class SnakeGame extends React.Component {
       }
       
       if(this.state.isGameOver && this.state.singleSignedMessage) {
-        const callbackReturnVal = true
-        this.props.callback({ callbackReturnVal })
+        const callbackReturnScore = this.state.score
+        this.props.callback({ callbackReturnScore })
         this.state.singleSignedMessage = false
       }
 
