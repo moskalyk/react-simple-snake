@@ -148,7 +148,7 @@ class SnakeGame extends React.Component {
       direction: 'right',
       directionChanged: false,
       isGameOver: false,
-      gameLoopTimeout: 300,
+      gameLoopTimeout: 175,
       snakeColor: this.getRandomColor(),
       appleColor: this.getRandomColor(),
       score: 0,
@@ -224,7 +224,7 @@ class SnakeGame extends React.Component {
       }
 
       // decrease the game loop timeout
-      if (gameLoopTimeout > 25) gameLoopTimeout -= 0.5
+      // if (gameLoopTimeout > 25) gameLoopTimeout -= 0.5
 
       this.setState({
         snake,
