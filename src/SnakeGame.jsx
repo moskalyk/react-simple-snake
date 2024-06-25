@@ -44,8 +44,8 @@ class SnakeGame extends React.Component {
     width -= width % 30
     if (width < 30) width = 30
     let height = (width / 3) * 2
-    let blockWidth = width / 30 - 4
-    let blockHeight = height / 20 - 4
+    let blockWidth = width / 27
+    let blockHeight = height / 19
 
     // snake initialization
     let startSnakeSize = this.props.startSnakeSize || 6
