@@ -91,6 +91,9 @@ class SnakeGame extends React.Component {
         this.tryToEatSnake()
         this.tryToEatApple()
         this.setState({ directionChanged: false })
+      } else {
+        const callbackReturnVal = true
+        this.props.callback({ callbackReturnVal })
       }
 
       this.gameLoop()
