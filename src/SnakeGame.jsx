@@ -9,6 +9,7 @@ class SnakeGame extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this)
 
     this.state = {
+      singleSignedMessage: true,
       width: 0,
       height: 0,
       blockWidth: 0,
@@ -91,9 +92,12 @@ class SnakeGame extends React.Component {
         this.tryToEatSnake()
         this.tryToEatApple()
         this.setState({ directionChanged: false })
-      } else {
+      }
+      
+      if(!this.state.isGameOver && this.state.singleSignedMessage) {
         const callbackReturnVal = true
         this.props.callback({ callbackReturnVal })
+        this.state.singleSignedMessage = false
       }
 
       this.gameLoop()
@@ -113,6 +117,7 @@ class SnakeGame extends React.Component {
     let blockWidth = this.state.blockWidth
     let blockHeight = this.state.blockHeight
     let apple = this.state.apple
+    this.state.singleSignedMessage = true
 
     // snake reset
     let snake = []
